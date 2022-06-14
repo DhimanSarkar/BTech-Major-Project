@@ -1,0 +1,40 @@
+\chapter{Introduction}
+
+\section{Overview}
+Matrix Algebra is a very useful tool for any Science or Engineering field. We often express a system, its state, its configuration in terms of various matrices. And to analyze its state, its behavior, its interaction with other system, we often need to perform various numeric operations on those matrices. This numerical manipulations are mostly done by digital computers. And as we already know that the digital computers work on the principle of two states - HIGH '1' and LOW '0'. This limits the scope of mathematical computation in terms of time complexity. In comparison between CPUs, GPUs and Digital ASICs, ASICs may perform better than CPU and GPU but still it utilizes many clock cycles for various operations other than numeric calculation. So, In this regard, we want to propose a different approach in doing numeric calculations in matrices, especially Matrix Multiplication. This approach can reduce the computation time drastically.
+
+
+\section{Problem Formulation}
+Let's say we have two $2\times2$ matrix and we want to multiply this.
+\begin{displaymath}
+	A = \begin{bmatrix}
+		a & b\\
+		c & d
+	\end{bmatrix}
+\text{And, }
+	B = \begin{bmatrix}
+		p & q\\
+		r & s
+	\end{bmatrix}\\
+\end{displaymath}
+\begin{displaymath}
+	\text{Now, } A \times B = \begin{bmatrix}
+		ap+br & aq+bs\\
+		cp+dr & cq+cs
+	\end{bmatrix}
+\end{displaymath}
+
+So, we can see that the simple $2\times2$ matrix multiplication results in 8 different numeric multiplication and 4 distinct addition.
+
+To generalize this, a $n \times n$ square matrix multiplied by another $n \times n$ square matrix will result in $n^3$ multiplications and $n^2(n-1)$ additions.
+
+In case of 8051 microcontroller, a single multiplication event consisting of MOV and MUL instruction requires a total of 60 T-states (12 T-States for MOV\cite{8051_T} and 48 T-states for MUL\cite{8051_T}). So, for a $100\times 100$ matrix multiplication, this requires few thousands of T-states leading to a noticeable time delay.
+
+
+\section{Objective}
+As per our project topic, our main objective is to sketch a Analog Circuitry, which can multiply two numbers and then using those multiplying cell to produce an output equivalent to matrix multiplication.
+
+\section{Motivation}
+In every domain of Science and Engineering matrix is there. For low volume numerical computations, digital computers are fine but in case for very large volume of numerical computations, digital computers are not suitable. And in our Industry 4.0 era, we need real time processing of physical variables. This is totally unsuitable digital computers. So, we tried to find an alternative solution to this problem and realized that an analog computer specialized in doing matrix multiplications would solve those issues.
+
+\nopagebreak
